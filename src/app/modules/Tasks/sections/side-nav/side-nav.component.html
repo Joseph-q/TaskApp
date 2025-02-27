@@ -1,0 +1,19 @@
+<nav class="bg-black text-white h-full w-64 flex flex-col justify-between">
+    <div class='flex flex-row items-center'>
+        <mat-icon>logout</mat-icon>
+    </div>
+
+    <div class="content-nav">
+        <mat-toolbar color="primary">
+            <span>Navigation</span>
+            <span class="spacer"></span>
+            <button mat-button color="accent">Agregar Tarea</button>
+          </mat-toolbar>
+          
+          <mat-nav-list>
+            <a mat-list-item routerLink="/today">Today</a>
+            <a mat-list-item routerLink="/all">All</a>
+          </mat-nav-list>
+
+    </div>
+</nav>
