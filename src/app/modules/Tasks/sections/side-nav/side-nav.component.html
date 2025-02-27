@@ -1,19 +1,47 @@
-<nav class="bg-black text-white h-full w-64 flex flex-col justify-between">
-    <div class='flex flex-row items-center'>
-        <mat-icon>logout</mat-icon>
-    </div>
+<nav class="sidenav-container">
+  <div class='header-nav'>
+    <button mat-icon-button>
+      <mat-icon>logout</mat-icon>
 
-    <div class="content-nav">
-        <mat-toolbar color="primary">
-            <span>Navigation</span>
-            <span class="spacer"></span>
-            <button mat-button color="accent">Agregar Tarea</button>
-          </mat-toolbar>
-          
-          <mat-nav-list>
-            <a mat-list-item routerLink="/today">Today</a>
-            <a mat-list-item routerLink="/all">All</a>
-          </mat-nav-list>
+    </button>
 
-    </div>
+    <button mat-icon-button>
+      <mat-icon> menu </mat-icon>
+    </button>
+  </div>
+
+  <div class="content-nav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="today">
+        <mat-icon matListItemIcon>event</mat-icon>
+        <span matListItemTitle>
+          Hoy
+        </span>
+
+      </a>
+
+
+      <a mat-list-item routerLink="all">
+        <mat-icon matListItemIcon>list</mat-icon>
+
+        <span matListItemTitle>
+          Tareas
+        </span>
+
+      </a>
+    </mat-nav-list>
+
+    <button mat-raised-button extended (click)="showModal.emit()">
+      <mat-icon>add</mat-icon>
+      <span></span>
+      Agregar Tarea</button>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="recent-tasks">
+    <mat-nav-list>
+      <app-card-task-badge title="Hacer deberes"></app-card-task-badge>
+    </mat-nav-list>
+  </div>
 </nav>
