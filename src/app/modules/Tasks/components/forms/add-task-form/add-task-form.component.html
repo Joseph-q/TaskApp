@@ -1,5 +1,4 @@
 <mat-card>
-    <mat-card-title>Agregar Nueva Tarea</mat-card-title>
     <mat-card-content>
       <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="full-width">
@@ -11,10 +10,6 @@
           <mat-label>Descripción</mat-label>
           <textarea matInput formControlName="description"></textarea>
         </mat-form-field>
-  
-        <button mat-raised-button color="primary" type="submit" [disabled]="todoForm.invalid">
-          Agregar
-        </button>
       </form>
     </mat-card-content>
   </mat-card>

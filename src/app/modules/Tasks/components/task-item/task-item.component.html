@@ -1,0 +1,9 @@
+<div class="checkbox-container" (dblclick)="onUpdate()">
+    <mat-checkbox (change)="onChangeCheckBox()" class="custom-checkbox">
+    </mat-checkbox>
+    <div class="checkbox-content">
+        <span class="title">{{taskItem.title}}</span>
+        <span class="desc">{{taskItem.description}}</span>
+        <span class="date">{{taskItem.createdAt | date}}</span>
+    </div>
+</div>
