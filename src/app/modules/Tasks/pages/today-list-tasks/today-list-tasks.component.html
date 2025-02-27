@@ -15,7 +15,9 @@
     </header>
 
     <div class="container-tasks">
-        <app-task-item (change)="onChangeCheckBox($event)"></app-task-item>
+       @for (task of tasks$ |async; track $index) {
+        <app-task-item [taskItem]="task"></app-task-item>
+       }
     </div>
 
 

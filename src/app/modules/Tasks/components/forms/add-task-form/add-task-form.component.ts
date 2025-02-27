@@ -40,8 +40,10 @@ export class AddTaskFormComponent {
 
   onSubmit() {
     if (this.todoForm.valid) {
-      console.log('Nueva Tarea:', this.todoForm.value);
-      this.todoForm.reset();
+      this._taskService.AddTask({
+        title: this.todoForm.get('title')?.value,
+        description: this.todoForm.get('name')?.value,
+      });
     }
   }
 }

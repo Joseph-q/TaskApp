@@ -1,18 +1,34 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import {  MatButtonModule } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { RouterLink } from '@angular/router';
-import { CardTaskBadgeComponent } from "../../components/card-task-badge/card-task-badge.component";
+import { CardTaskBadgeComponent } from '../../components/card-task-badge/card-task-badge.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AddTaskDialogComponent } from '../../components/dialog/add-task-dialog/add-task-dialog.component';
 
 @Component({
   selector: 'app-side-nav',
-  imports: [MatIconModule, MatButtonModule, MatToolbarModule, MatListModule, RouterLink, CardTaskBadgeComponent],
+  imports: [
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatListModule,
+    RouterLink,
+    CardTaskBadgeComponent,
+  ],
   templateUrl: './side-nav.component.html',
-  styleUrl: './side-nav.component.scss'
+  styleUrl: './side-nav.component.scss',
 })
 export class SideNavComponent {
+  readonly dialog = inject(MatDialog);
+
   @Output() showModal = new EventEmitter<void>();
 
+  AddTask() {
+      this.dialog.open(AddTaskDialogComponent,{
+          width:"40%"
+        })
+  }
 }

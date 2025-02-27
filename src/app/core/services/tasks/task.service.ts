@@ -37,9 +37,9 @@ export class TaskService {
       .pipe(tap(() => this.updateTrigger$.next()));
   }
 
-  public UpdateTask(task: UpdateTaskRequest): Observable<void> {
+  public UpdateTask(id: number, task: UpdateTaskRequest): Observable<void> {
     return this._httpClient
-      .put<void>(`http://localhost:3000/tasks/${task.id}`, task)
+      .put<void>(`http://localhost:3000/tasks/${id}`, task)
       .pipe(tap(() => this.updateTrigger$.next()));
   }
 
