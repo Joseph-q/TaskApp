@@ -1,0 +1,8 @@
+<mat-dialog-content>
+    <app-add-task-form></app-add-task-form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-button (click)="onSave()" cdkFocusInitial>Crear Tarea</button>
+</mat-dialog-actions>

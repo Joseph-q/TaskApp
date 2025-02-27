@@ -1,0 +1,39 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Usuario</mat-label>
+    <input matInput formControlName="username" required />
+    @if (
+    loginForm.get('username')?.invalid &&
+    loginForm.get('username')?.touched
+    ) {
+
+    <mat-error>
+      {{usernameError()}}
+    </mat-error>
+    }
+
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Contraseña</mat-label>
+    <input matInput type="password" formControlName="password" required />
+    @if (
+    loginForm.get('password')?.invalid &&
+    loginForm.get('password')?.touched
+    ) {
+    <mat-error>
+      {{passwordError()}}
+    </mat-error>
+    }
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+    Iniciar sesión
+  </button>
+
+
+    <p class="warn">¿Aún no estás registrado?  
+      <a routerLink="/register">Regístrate aquí</a>
+    </p>
+
+</form>
