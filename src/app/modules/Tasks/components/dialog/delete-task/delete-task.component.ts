@@ -28,6 +28,12 @@ export class DeleteTaskComponent {
   }
 
   OnDelete() {
-    this.taskService.DeleteTask(this.data.id);
+    this.taskService.DeleteTask(this.data.id).subscribe(
+      {
+        complete:()=>{
+          this.onCancel()
+        }
+      }
+    );
   }
 }

@@ -72,8 +72,10 @@ export class TaskService {
   }
 
   public DeleteTask(id: number): Observable<void> {
-    return this._httpClient.delete<void>(`${environment.baseUrl}/tasks/${id}`, {
-      headers: this.Headers,
-    });
+    return this._httpClient
+      .delete<void>(`${environment.baseUrl}/tasks/${id}`, {
+        headers: this.Headers,
+      })
+      .pipe(tap(() => this.updateTrigger$.next()));
   }
 }
