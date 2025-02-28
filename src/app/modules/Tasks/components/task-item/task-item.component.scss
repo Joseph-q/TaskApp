@@ -1,4 +1,9 @@
+*{
+    user-select: none;
+}
+
 .checkbox-container {
+    cursor: pointer;
     display: flex;
     align-items: center;
     background-color: #fff;

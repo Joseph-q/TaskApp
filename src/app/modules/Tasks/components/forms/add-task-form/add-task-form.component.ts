@@ -43,7 +43,7 @@ export class AddTaskFormComponent {
       this._taskService.AddTask({
         title: this.todoForm.get('title')?.value,
         description: this.todoForm.get('name')?.value,
-      });
+      }).subscribe();
     }
   }
 }

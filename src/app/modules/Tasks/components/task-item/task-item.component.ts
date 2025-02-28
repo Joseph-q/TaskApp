@@ -22,12 +22,14 @@ export class TaskItemComponent {
 
   onChangeCheckBox() {
     this.taskService.UpdateTask(this.taskItem.id, {
-      isCompleted: this.taskItem.isCompleted!,
-    });
+      isCompleted: !(this.taskItem.isCompleted),
+    }).subscribe();
   }
+
   onUpdate() {
     this.dialog.open(UpdateTaskDialogComponent,{
-      width:"40%"
+      width:"40%",
+      data : this.taskItem
     })
   }
 }

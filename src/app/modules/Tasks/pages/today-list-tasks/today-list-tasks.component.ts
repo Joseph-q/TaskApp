@@ -19,8 +19,12 @@ export class TodayListTasksComponent implements OnInit {
   public tasks$!: Observable<GetTaskResponse[]>;
 
   ngOnInit(): void {
-    this.tasks$ = this.taskService.GetAllTasks();
+    const createdAt = new Date().toISOString().split('T')[0]; 
+    this.tasks$ = this.taskService.GetAllTasks({
+      completed: false,
+      page: 1,
+      limit: 100,
+      createdAt 
+    });
   }
-
-  
 }

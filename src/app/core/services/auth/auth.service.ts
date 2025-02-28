@@ -11,10 +11,10 @@ export class AuthService {
   constructor(private readonly http: HttpClient) {}
 
   Login(authReq: AuthRequest): Observable<string> {
-    return this.http.post<string>(environment.baseUrl + '/login', authReq);
+    return this.http.post<string>(environment.baseUrl + '/auth/login', authReq);
   }
 
   Register(authReq: AuthRequest): Observable<void> {
-    return this.http.post<void>(environment.baseUrl + '/register', authReq);
+    return this.http.post<void>(environment.baseUrl + '/auth/register', authReq);
   }
 }

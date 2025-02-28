@@ -1,16 +1,15 @@
 import { Component, Input } from '@angular/core';
 import { MatListItem } from '@angular/material/list';
-import { RouterLink } from '@angular/router';
+import { GetTaskResponse } from '../../../../core/services/tasks/interfaces/response/GetTaskResponse.interface';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-card-task-badge',
-  imports: [MatListItem, RouterLink],
+  imports: [MatListItem, DatePipe],
   templateUrl: './card-task-badge.component.html',
   styleUrl: './card-task-badge.component.scss'
 })
 export class CardTaskBadgeComponent {
-  @Input({required:true}) title:string =""
-  @Input() dateString :string = ""
-
+  @Input({required:true}) task!: GetTaskResponse
   @Input() date :Date = new Date()
 }

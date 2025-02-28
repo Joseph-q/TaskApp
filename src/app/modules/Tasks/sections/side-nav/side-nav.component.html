@@ -41,7 +41,9 @@
 
   <div class="recent-tasks">
     <mat-nav-list>
-      <app-card-task-badge title="Hacer deberes"></app-card-task-badge>
+      @for(task of tasks$ | async; track $index){
+        <app-card-task-badge [task]="task"></app-card-task-badge>
+      }
     </mat-nav-list>
   </div>
 </nav>

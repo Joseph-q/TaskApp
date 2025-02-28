@@ -7,6 +7,14 @@
 }
 
 
+.container-tasks{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+
 .total-tasks{
     display: flex;
     flex-direction: row;

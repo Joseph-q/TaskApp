@@ -1,5 +1,5 @@
 <div class="checkbox-container" (dblclick)="onUpdate()">
-    <mat-checkbox (change)="onChangeCheckBox()" class="custom-checkbox">
+    <mat-checkbox (change)="onChangeCheckBox()" class="custom-checkbox" [checked]="taskItem.isCompleted">
     </mat-checkbox>
     <div class="checkbox-content">
         <span class="title">{{taskItem.title}}</span>
