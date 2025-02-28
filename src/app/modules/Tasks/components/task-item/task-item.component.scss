@@ -54,3 +54,19 @@
         }
     }
 }
+
+
+
+.delete-btn {
+    position: absolute;
+    top: 5px;  /* Ajusta la distancia desde la parte superior */
+    right: 5px; /* Ajusta la distancia desde la parte derecha */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red; /* Puedes cambiar el color a tu gusto */
+  }
+  
+  .delete-btn mat-icon {
+    font-size: 20px; /* Tamaño del ícono */
+  }

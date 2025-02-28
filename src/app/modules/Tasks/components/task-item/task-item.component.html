@@ -1,9 +1,15 @@
 <div class="checkbox-container" (dblclick)="onUpdate()">
-    <mat-checkbox (change)="onChangeCheckBox()" class="custom-checkbox" [checked]="taskItem.isCompleted">
-    </mat-checkbox>
+    <mat-checkbox (change)="onChangeCheckBox()" class="custom-checkbox" [checked]="taskItem.isCompleted"></mat-checkbox>
+    
     <div class="checkbox-content">
-        <span class="title">{{taskItem.title}}</span>
-        <span class="desc">{{taskItem.description}}</span>
-        <span class="date">{{taskItem.createdAt | date}}</span>
+      <span class="title">{{taskItem.title}}</span>
+      <span class="desc">{{taskItem.description}}</span>
+      <span class="date">{{taskItem.createdAt | date}}</span>
     </div>
-</div>
+  
+    <!-- Botón de borrar -->
+    <button class="delete-btn" (click)="onDelete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  

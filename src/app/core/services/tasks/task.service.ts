@@ -70,4 +70,10 @@ export class TaskService {
       })
       .pipe(tap(() => this.updateTrigger$.next()));
   }
+
+  public DeleteTask(id: number): Observable<void> {
+    return this._httpClient.delete<void>(`${environment.baseUrl}/tasks/${id}`, {
+      headers: this.Headers,
+    });
+  }
 }
