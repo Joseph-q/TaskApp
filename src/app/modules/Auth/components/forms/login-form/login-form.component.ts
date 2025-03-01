@@ -59,7 +59,7 @@ export class LoginFormComponent {
         }
         ,
         complete: () => {
-          this.router.navigate(['/tasks']); // Redirige a la ruta /tasks
+          this.router.navigate(['/tasks/today']); // Redirige a la ruta /tasks
           this.unsubscribe$.complete();
         }
       }
